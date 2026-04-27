@@ -1,1 +1,39 @@
+#• Task: create  10 variable assignments, type conversions, print formatted table
+a=10
+b="himanshu"
+c="25"
+d=20.3
+is_active=True
+is_engaged=False
+f = 7
+g = 2.5
+h = "100"
+i = False
+j = 50
 
+a_f=float(a)
+c_int=int(c)
+d_int=int(d)
+is_active_f=float(is_active)
+f_float=float(f)
+j_str=str(j)
+#f"..." (f-string)  Allows you to format values inside {}
+
+print(f"{'Variable':<10} {'Value':<10} {'Type':<10}")
+print("-"*40)
+
+
+data = [
+    ("a_f", a_f, type(a_f).__name__),
+    ("b", b, type(b).__name__),
+    ("c_int", c_int, type(c_int).__name__),
+    ("d_int", d_int, type(d_int).__name__),
+    ("is_active_f", is_active_f, type(is_active_f).__name__),
+    ("f_float", f_float, type(f_float).__name__),
+    ("g", g, type(g).__name__),
+    ("h", h, type(h).__name__),
+    ("i", i, type(i).__name__),
+    ("j_str", j_str, type(j_str).__name__),
+]
+for var, val, typ in data:
+    print(f"{var:<10} {str(val):<10} {typ:<10}")
