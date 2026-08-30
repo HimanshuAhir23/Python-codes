@@ -1,0 +1,55 @@
+class Atm:
+    def __init__(self):
+        self.pin=""
+        self.balance=int()
+    
+    def menu(self):
+        user_ip=int(input('''welcome please select a option:
+                       enter 1 for pinsetup
+                       enter 2 for deposit
+                       enter 3 for withdraw
+                       enter 4 for balancecheck
+                       enter 5 to exit:
+                       '''))
+        if user_ip==1:
+            self.pin_setup()
+        elif user_ip==2:
+            self.deposit()
+        elif user_ip==3:
+            self.withdraw
+        elif user_ip==4:
+            self.display_balance
+        else:
+            print("thank you !!")
+    def pin_setup(self):
+        pin=input("enter the pin: ")
+        self.pin=pin
+    def deposit(self):
+        temp=input("enter the pin: ")
+        if temp==self.pin:
+            money=int(input("enter the money: "))
+            self.balance+=money
+        else:
+            print("invalid pin")
+
+    def withdraw(self):
+         temp=input("enter the pin")
+         if temp==self.pin:
+             withdraw_amount=int(input("enter amount to withdraw:"))
+             if self.balance>withdraw_amount:
+                 self.balance-=withdraw_amount
+                 print("withdraw success")
+         else:
+            print("invalid pin")
+    
+    def display_balance(self):
+        temp=input("enter the pin")
+        if temp==self.pin:
+            print(self.balance)
+        else:
+            print("invalid pin")
+
+
+         
+sbi=Atm()
+sbi.menu()
