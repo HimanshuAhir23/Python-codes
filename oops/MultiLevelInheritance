@@ -1,0 +1,37 @@
+class Product:
+
+    def __init__(self,type_of,size):
+        self.type_of =type_of
+        self.size=size
+
+    def show(self):
+        print("Parent")
+        print({self.type_of})
+        print({self.size})
+
+class Phone(Product):
+    def __init__(self, type_of, size,brand):
+        super().__init__(type_of, size)
+        self.brand=brand
+
+    def show(self):
+        super().show()
+        print("Phone (second class) ")
+        print({self.brand})
+
+class SmartPhone(Phone):
+
+    def __init__(self, type_of, size, brand,name,price):
+        super().__init__(type_of, size, brand)
+        self.name=name
+        self.price=price
+
+    def show(self):
+        super().show()
+        print("smartphone class")
+        print({self.name})
+        print({self.price})
+    
+    
+sp=SmartPhone("electronics","compact","one plus","mord",30000)
+sp.show()
