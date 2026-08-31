@@ -1,0 +1,18 @@
+class Geo:
+
+    def area(self,*args):
+        if len(args)==1:
+
+            r=args[0]
+            a=3.14*r*r
+            print("circle area")
+            return a
+        elif len(args)==2:
+            l=args[0]
+            b=args[1]
+            a=l*b
+            return a
+   
+
+obj=Geo()
+print(obj.area(2))
