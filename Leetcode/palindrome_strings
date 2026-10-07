@@ -1,0 +1,25 @@
+class Palindrome:
+    def __init__(self,s):
+        self.s=s
+        
+        
+    def check_palindorme(self):
+        
+        length=len(self.s)
+        stack=[]
+        for i in range(length):
+            stack.append(self.s[i])
+        
+        for i in range(length-1,-1,-1):
+            if stack[-1]==self.s[i]:
+                stack.pop()
+            else:
+                return False
+        
+        if not stack:
+            return True
+            
+        
+obj=Palindrome("madam")
+ans=obj.check_palindorme()
+print(ans)
