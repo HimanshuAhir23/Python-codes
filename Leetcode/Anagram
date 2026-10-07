@@ -1,0 +1,31 @@
+class Ananagram:
+    def __init__(self,s,t):
+        self.s=s
+        self.t=t
+    
+    def check_ananagram(self):
+        length_s=len(self.s)
+        length_t=len(self.t)
+        if length_t != length_s:
+            return False
+        arr=set()
+        
+        for i in range(length_s):
+            arr.add(self.s[i])
+            
+        for i in range(length_t):
+            if self.t[i] in arr :
+                arr.remove(self.t[i])
+            else :
+                return False
+        
+        if not arr:
+            return True
+
+obj=Ananagram("listen","silent")
+ans=obj.check_ananagram()
+print(ans)
+        
+        
+        
+        
